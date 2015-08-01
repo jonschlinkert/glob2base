@@ -1,3 +1,4 @@
+```sh
 #1: basic-glob
   glob-parent x 6,228,334 ops/sec ±2.11% (96 runs sampled)
   glob2base x 16,130 ops/sec ±3.64% (80 runs sampled)
@@ -29,3 +30,4 @@
 #8: normal-filepath
   glob-parent x 6,264,496 ops/sec ±1.39% (99 runs sampled)
   glob2base x 249 ops/sec ±87.80% (23 runs sampled)
+```
