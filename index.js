@@ -1,59 +1,19 @@
 'use strict';
 
 var path = require('path');
-var findIndex = require('find-index');
+var globParent = require('glob-parent');
 
-var flattenGlob = function(arr){
-  var out = [];
-  var flat = true;
-  for(var i = 0; i < arr.length; i++) {
-    if (typeof arr[i] !== 'string') {
-      flat = false;
-      break;
-    }
-    out.push(arr[i]);
+module.exports = function glob2base(glob) {
+  var str = glob;
+  if (typeof glob === 'object' && glob.pattern) {
+    str = glob.pattern;
   }
-
-  // last one is a file or specific dir
-  // so we pop it off
-  if (flat) {
-    out.pop();
+  var parent = globParent(str);
+  if (parent === str) {
+    parent = path.dirname(str);
   }
-  return out;
-};
-
-var flattenExpansion = function(set) {
-  var first = set[0];
-  var toCompare = set.slice(1);
-
-  // find index where the diff is
-  var idx = findIndex(first, function(v, idx){
-    if (typeof v !== 'string') {
-      return true;
-    }
-
-    var matched = toCompare.every(function(arr){
-      return v === arr[idx];
-    });
-
-    return !matched;
-  });
-
-  return first.slice(0, idx);
-};
-
-var setToBase = function(set) {
-  // normal something/*.js
-  if (set.length <= 1) {
-    return flattenGlob(set[0]);
+  if (parent[parent.length - 1] !== '/') {
+    parent += '/';
   }
-  // has expansion
-  return flattenExpansion(set);
-};
-
-module.exports = function(glob) {
-  var set = glob.minimatch.set;
-  var baseParts = setToBase(set);
-  var basePath = path.normalize(baseParts.join(path.sep))+path.sep;
-  return basePath;
+  return parent;
 };
