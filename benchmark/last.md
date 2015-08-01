@@ -1,31 +1,31 @@
 #1: basic-glob
-  glob-parent x 1,350,571 ops/sec ±1.61% (95 runs sampled)
-  glob2base x 19,285 ops/sec ±4.86% (74 runs sampled)
+  glob-parent x 1,382,367 ops/sec ±1.82% (95 runs sampled)
+  glob2base x 21,507 ops/sec ±4.08% (77 runs sampled)
 
 #2: brace-range
-  glob-parent x 307,976 ops/sec ±1.56% (98 runs sampled)
-  glob2base x 4,707 ops/sec ±6.55% (71 runs sampled)
+  glob-parent x 378,046 ops/sec ±1.46% (99 runs sampled)
+  glob2base x 3,981 ops/sec ±5.88% (75 runs sampled)
 
 #3: brace-set
-  glob-parent x 445,186 ops/sec ±1.44% (99 runs sampled)
-  glob2base x 13,964 ops/sec ±2.82% (79 runs sampled)
+  glob-parent x 451,011 ops/sec ±1.25% (97 runs sampled)
+  glob2base x 9,592 ops/sec ±3.33% (80 runs sampled)
 
 #4: char-class
-  glob-parent x 468,201 ops/sec ±1.50% (98 runs sampled)
-  glob2base x 15,930 ops/sec ±3.03% (79 runs sampled)
+  glob-parent x 482,870 ops/sec ±1.65% (99 runs sampled)
+  glob2base x 12,429 ops/sec ±3.90% (77 runs sampled)
 
 #5: compile-brace
-  glob-parent x 101,450 ops/sec ±1.24% (97 runs sampled)
-  glob2base x 7,738 ops/sec ±14.09% (65 runs sampled)
+  glob-parent x 136,871 ops/sec ±10.83% (85 runs sampled)
+  glob2base x 6,408 ops/sec ±2.36% (83 runs sampled)
 
 #6: extglob
-  glob-parent x 438,018 ops/sec ±1.31% (99 runs sampled)
-  glob2base x 6,438 ops/sec ±6.11% (72 runs sampled)
+  glob-parent x 404,945 ops/sec ±3.31% (97 runs sampled)
+  glob2base x 17,533 ops/sec ±10.83% (59 runs sampled)
 
 #7: globstar
-  glob-parent x 406,589 ops/sec ±20.09% (90 runs sampled)
-  glob2base x 7,106 ops/sec ±9.63% (63 runs sampled)
+  glob-parent x 420,375 ops/sec ±1.60% (93 runs sampled)
+  glob2base x 19,291 ops/sec ±13.45% (58 runs sampled)
 
 #8: normal-filepath
-  glob-parent x 1,058,398 ops/sec ±23.12% (92 runs sampled)
-  glob2base x 330 ops/sec ±26.77% (31 runs sampled)
+  glob-parent x 862,945 ops/sec ±1.42% (97 runs sampled)
+  glob2base x 200 ops/sec ±23.99% (27 runs sampled)
